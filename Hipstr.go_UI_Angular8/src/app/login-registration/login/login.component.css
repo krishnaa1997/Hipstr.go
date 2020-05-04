@@ -1,0 +1,124 @@
+.clearfix
+{
+    
+    margin-bottom: 15px;
+}
+.text-danger
+{
+    color: red;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+blockquote, li, p {
+    color: #0a0c1e;
+    font-weight: 400;
+    font-size: 14px;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+
+
+.nav-tabs>li>a{
+    box-shadow: 2px 2px 2px black;
+    background:#ffe500;
+    color: black!important;
+    border-color: transparent;
+    font-weight: 700;
+    cursor: default;
+}
+
+a, a:visited {
+    width: auto;
+    white-space: nowrap;
+}
+a, a.button:hover, a:visited {
+    text-decoration: none!important;
+}
+.nav-tabs>li.active>a {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.px
+{
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left: 3%;
+   
+}
+
+label{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.radio
+{
+    width: 15px;
+    margin-top: -7%;
+}
+.radio-label
+{
+    padding-right: 7%;
+    padding-left: 1%;
+}
+
+form{
+    padding: 1%;
+
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+.box {
+    min-width: 380px;
+    max-width: 390px;
+    box-shadow: 2px 2px 2px black;
+    background: linear-gradient(to bottom, #ffe600 0%,  #a0f8af 100%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.label:after{
+    content:"*" ;
+   color:red    
+   }
+.d-flex
+{
+    background-color: rgb(63,169,245);
+}
+
+.brand
+{
+    color:#ffe500;
+}
+
+.spacing
+{
+    padding: 3%;
+    padding-right: 2%;
+}
+.row
+{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.img1
+{
+    margin-left: -125%;
+}

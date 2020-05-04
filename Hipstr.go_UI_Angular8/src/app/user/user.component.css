@@ -1,0 +1,105 @@
+.container-fluid
+{
+    padding: 0%;
+}
+.top-text{
+    font-size: 20px;
+    font-family: cursive;
+}
+.topnavbar span{
+    color: #32337e;
+}
+.topbar-separator {
+    position: relative;
+    bottom: 1px;
+}
+b, strong {
+    font-weight: 700;
+}
+.topnavbar {
+    height: 96px;
+    padding: 10px;
+    text-align: center;
+    z-index: 9999;
+}
+
+/*header .container{
+   background-color: rgb(0, 227, 129);
+    color: black;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}*/
+
+.top-navbar
+{
+    background-color: #2874f0;
+    color:black;
+    font-weight: 700;
+}
+
+.row-spacing
+{
+
+    margin-left: 37%;
+}
+
+.nav-a {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 100!important;
+    color: white;
+    font-weight: 900;
+    position: relative;
+    bottom: 0px;
+}
+
+.pad
+{
+    background-color: #697078;
+}    
+
+a{
+    text-decoration: none;
+}
+.lighten-3{
+    background: linear-gradient(to bottom, #2874f0 0%, #f5f5f5  100%);
+    box-shadow: 1px 1px 1px;
+    font-family: cursive;
+    color: yellow;
+}
+.darken-3{
+    padding-left: 17%;
+    background:  linear-gradient(to bottom, #f5f5f5 0%,  #2874f0 100%);
+    font-family: cursive;
+    color: yellow;
+}
+.white-text{
+    color: white;
+}
+.fa:hover{
+    cursor: pointer;
+}
+.fa-facebook-f:hover{
+    color: blue;
+}
+.fa-twitter:hover{
+    color: rgb(29, 140, 184);
+}
+.fa-google-plus:hover{
+    color: rgb(255, 60, 0);
+}
+.fa-linkedin:hover{
+    color: rgb(9, 38, 116);
+}
+.fa-instagram:hover{
+    color: red;
+}
+.fa-pinterest:hover{
+    color: rgb(141, 13, 62);
+}
+.view:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}

@@ -1,0 +1,25 @@
+<div class="container-fluid">
+        <router-outlet></router-outlet>
+</div>
+<footer>
+    <div class="row pad text-light" style="padding: 10px">
+        <div class="container">
+            <div class="col-md-7">
+                <span class="text-dark">
+                    <strong>This site is copyright &copy; to Capgemini
+                        <!-- built-in date pipe -->
+                        {{ todaysDate | date:'yyyy'}}.
+                        All rights are reserved here.
+                    </strong>
+                </span>
+            </div>
+            <div class="col-md-5">
+                <div class="text-white">
+                    <!-- date: 'medium', 'shortTime', 'dd/MM/yy', 'dd-MM-yy, etc -->
+                    <h4> {{todaysDate| date:'medium'}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of row -->
+</footer>

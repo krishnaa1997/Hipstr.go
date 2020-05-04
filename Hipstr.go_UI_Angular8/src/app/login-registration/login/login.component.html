@@ -1,0 +1,188 @@
+<div class="d-flex">
+    <div class=" pt-5">
+        <h1 class="text-white ml-4"><em>We <strong class="brand">Hipstr Airlines</strong></em></h1>
+        <h2 class="text-white ml-4"><em>We are all set for <strong class="text-danger">YOUR</strong> Service</em></h2>
+        <img class="img1" src="assets/img/flight2.gif" alt="" width="530px" class="mt-5">
+    </div>
+
+    <div class="container px">
+        <div class="pad">
+            <div class="row">
+            <ul class="nav nav-tabs">
+                <li class="login"><a class="umbr-radius" tabindex="0"
+                        style="border-radius: 8px 0px 0px 0px!important" (click)="loginFlag()">Login</a></li>
+                <li class="registration"><a class="umbr-radius" tabindex="1"
+                        style="border-radius: 0px 8px 0px 0px!important" (click)="registerFlag()">Register</a></li>
+            </ul>
+        </div>
+            <div class="tab-content box highlightdiv p-4" *ngIf="login_flag">
+                <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+
+                    <div class="form-group row">
+                        <label for="UserName" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">UserId </span>:
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control " id="UserName" placeholder="User Name"
+                                formControlName="userId" />
+                        
+                                <span class="text-danger"
+                                *ngIf="(loginForm.controls.userId.touched || submitted1) && loginForm.controls.userId.errors?.required">
+                                User Id is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">Password </span>:
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control " id="password" placeholder="Password"
+                                formControlName="password" />
+
+                                <span class="text-danger"
+                                *ngIf="(loginForm.controls.password.touched || submitted1) && loginForm.controls.password.errors?.required">
+                                Password is required
+                            </span>
+                        </div>
+
+                    </div>
+                    <!-- End of  Password Text Box -->
+
+                    <div class="text-right">
+                        <button class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+
+                    </div>
+                </form>
+
+            </div>
+            <div class="tab-content box highlightdiv spacing" *ngIf="register_flag">
+                <form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
+
+                    <div class="form-group row">
+                        <label for="UserId" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">UserId </span>:
+                            
+                        </label>
+
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control " id="UserId" placeholder="User Name"
+                                formControlName="userId" />
+                            <span class="text-danger"
+                                *ngIf="(registerForm.controls.userId.touched || submitted) && registerForm.controls.userId.errors?.required">
+                                User Id is required
+                            </span>
+                            <span class="text-danger" *ngIf="userExist">
+                                UserId Already Exist Try Again
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="FirstName" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">FirstName </span> :
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control " id="FirstName" placeholder="First Name"
+                                formControlName="firstName" />
+                            <span class="text-danger"
+                                *ngIf="(registerForm.controls.firstName.touched || submitted) && registerForm.controls.firstName.errors?.required">
+                                First Name is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerForm.controls.firstName.touched && registerForm.controls.firstName.errors?.pattern">
+                                Enter a valid First Name
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="LastName" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">LastName </span> :
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control " id="LastName" placeholder="Last Name"
+                                formControlName="lastName" />
+                            <span class="text-danger"
+                            *ngIf="(registerForm.controls.lastName.touched || submitted) && registerForm.controls.lastName.errors?.required">
+                            Last Name is required
+                        </span>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.lastName.touched && registerForm.controls.lastName.errors?.pattern">
+                            Enter a valid Last Name
+                        </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="MobileNumber" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">MobileNo. </span> :
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control " id="MobileNumber" placeholder="MObile Number"
+                                formControlName="mobileNumber" />
+                                <span class="text-danger"
+                                *ngIf="(registerForm.controls.mobileNumber.touched || submitted) && registerForm.controls.mobileNumber.errors?.required">
+                                Mobile Number is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerForm.controls.mobileNumber.touched && registerForm.controls.mobileNumber.errors?.pattern">
+                                Enter a valid Mobile Number
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="Gender" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">Gender </span> :
+                        </label>
+                        <div class="col-lg-8 row">
+                            <div class="col-md-6 row">
+                            <input type="radio" class="form-control radio " id="male" placeholder="Gender" value="male"
+                                formControlName="gender" /> <label id="male" class="radio-label">Male</label></div>
+                                <div class="col-md-6 row">
+                                <input type="radio" class="form-control radio " id="female" placeholder="Gender" value="female"
+                                formControlName="gender" /> <label id="female" class="radio-label">Female</label>  
+                            </div>
+                                <span class="text-danger"
+                                *ngIf="(registerForm.controls.gender.touched || submitted) && registerForm.controls.gender.errors?.required">
+                                Gender is required
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-lg-4 text-right font-weight-bold">
+                            <span class="label">Password </span> :
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control " id="password" placeholder="Password"
+                                formControlName="password" />
+                                <span class="text-danger"
+                                *ngIf="(registerForm.controls.password.touched || submitted) && registerForm.controls.password.errors?.required">
+                                Password is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerForm.controls.password.touched && registerForm.controls.password.errors?.pattern">
+                                Enter a valid Password
+                            </span>
+                        </div>
+
+                    </div>
+                    <!-- End of  Password Text Box -->
+
+                    <div class="text-right">
+                        <button class="btn btn-success" [disabled]="!registerForm.valid">Sign up</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <img src="assets/img/flight.gif" alt="" width="230px" class="img1">
+    </div>
+</div>

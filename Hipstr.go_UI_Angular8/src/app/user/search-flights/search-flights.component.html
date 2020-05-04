@@ -1,0 +1,112 @@
+<div class="bg">
+    <div class="spacing">
+        <form [formGroup]="searchForm" (ngSubmit)="search()">
+            <div class="row">
+                <div class="col-md-3 fl">
+                    <div class="form-group">
+
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control input-style" id="Source" formControlName="source" />
+                        </div>
+
+                        <div *ngIf="submitted && searchForm.controls.source.errors">
+                            <div class="text-danger" *ngIf="searchForm.controls.source.errors.required">
+                                source is required ..!
+                            </div>
+                            <!-- <div class="text-danger" *ngIf="addForm.controls.firstName.errors.pattern">
+                                                FirstName must begin with Capital letter and 15 characters long ..!
+                                            </div>
+                                        </div>-->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <img class="style" src="../../../assets/img/switch-icon.png" alt="" (click)="swap()">
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control input-style" id="Destination"
+                                formControlName="destination" />
+                        </div>
+
+                        <div *ngIf="submitted && searchForm.controls.destination.errors">
+                            <div class="text-danger" *ngIf="searchForm.controls.destination.errors.required">
+                                destination is required ..!
+                            </div>
+                            <!-- <div class="text-danger" *ngIf="addForm.controls.firstName.errors.pattern">
+                                            FirstName must begin with Capital letter and 15 characters long ..!
+                                        </div>
+                                    </div>-->
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                    <input type="date" name="Date" class="form-control input-style date-style" id="journeyDate"
+                        formControlName="journeyDate" />
+                </div>
+                <div class="col-md-2">
+                    <div class="text-right button-style">
+                        <button class="btn btn-warning">Search</button>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2 bg1">
+
+        </div>
+
+        <div class="col-md-8 " *ngIf="flightFoundFlag">
+
+            <div style="width:1000px" *ngFor="let flight of flights; let i = index">
+                <div class="card card-spacing">
+                <div class="row ">
+                    <div class="col-md-3">
+                        <img src="../../../assets/img/{{flight.flightCompany}}.jpg" alt="Card image" class="image" style="width:110%"></div>
+                    <div class="col-md-6 card-body">
+                        <span class="row card-title">
+                            <div class="col-md-6 text-left row">
+                            <h4>{{flight.source}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;<img
+                                src="../../../assets/img/switch-icon.png">&nbsp;&nbsp;&nbsp;&nbsp;<h4>
+                                {{flight.destination}}
+                            </h4>
+                        </div>
+                        <div class="col-md-6 bg3" *ngIf="flight.availableSeats===0" >
+
+                        </div>
+                        </span>
+                        <h6>Date : {{flight.journeyDate}}</h6>
+                        <h6>Fare : {{flight.cost}}</h6>
+                        <h6>Seats Available : {{flight.availableSeats}}</h6>
+
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary pad" (click)="bookTicket(flight)">Book</button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-8" *ngIf="flightNotFoundFlag">
+            <br>
+            <h2 class="text-center text-danger">{{flightNotFound}}</h2>
+        </div>
+        <div class="col-md-2 bg1">
+
+        </div>
+    </div>
+</div>

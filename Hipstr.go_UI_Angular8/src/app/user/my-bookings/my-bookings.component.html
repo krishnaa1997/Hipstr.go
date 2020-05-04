@@ -1,0 +1,88 @@
+<div class="row bg">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8" *ngIf="booked_flag">
+        <div class="card card-spacing" style="width:1000px" *ngFor="let flight of flights;let i = index">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="../../../assets/img/{{flight.flightCompany}}.jpg" alt="Card image" class="image" style="width:110%"></div>
+                <div class="col-md-6 card-body">
+                    <span class="row card-title">
+                        <div class="col-md-6 text-left row">
+                        <h4>{{flight.source | titlecase}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;<img
+                            src="../../../assets/img/switch-icon.png">&nbsp;&nbsp;&nbsp;&nbsp;<h4>{{flight.destination | titlecase}}
+                        </h4>
+                    </div>
+                    <div class="col-md-6 bg1">
+                    
+                    </div>
+                    </span>
+                    <div class="row text-center">
+                        <h6>Passenger Name: {{tickets[i].passengerName | titlecase}}</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                    <h6>Date : {{flight.journeyDate}}</h6>
+                    <h6>Fare : {{flight.cost}}</h6>
+                </div>
+                <div class="col-md-6 text-center">
+                    <h6>Passenger Age : {{tickets[i].age}}</h6>
+                    <h6>Seats Available : {{flight.availableSeats}}</h6>
+                    
+                </div>
+                </div>
+
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-primary pad1" (click)="cancelTicket(flight)">Cancel</a>
+                </div>
+                <br>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-8" *ngIf="flightNotFoundFlag">
+        <br>
+        <h2 class="text-center text-danger">{{this.flightNotFound}}</h2>
+
+    </div>
+    <div class="col-md-8" *ngIf="cancel_flag">
+
+        <div class="card card-spacing" style="width:1000px">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="../../../assets/img/{{flight.flightCompany}}.jpg" class="image" alt="Card image" style="width:110%"></div>
+                <div class="col-md-6 card-body">
+                    <span class="row card-title">
+ 
+                        <h4>{{flight.source | titlecase}}</h4>&nbsp;&nbsp;&nbsp;&nbsp;<img
+                            src="../../../assets/img/switch-icon.png">&nbsp;&nbsp;&nbsp;&nbsp;<h4>{{flight.destination | titlecase}}
+                        </h4>
+
+                    </span>
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                    <h6>Date : {{flight.journeyDate}}</h6>
+                    <h6>Fare : {{flight.cost}}</h6>
+                </div>
+                <br>
+                <div class="row text-left">
+                    <h4 class="color">RS {{flight.cost}} Has Been Succesfully Refunded In Your Bank Account</h4>
+                </div>
+                </div>
+                </div>
+                <div class="col-md-3 stamp">
+
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="text-center">
+        <a class="btn btn-primary pad" (click)="showBookings()">Click Here to show your existing bookings</a>
+    </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>

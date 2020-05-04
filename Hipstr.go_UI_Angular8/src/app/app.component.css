@@ -1,0 +1,50 @@
+h1 strong{
+    color: yellow;
+}
+.container-fluid
+{
+    padding: 0%;
+
+}
+.topnavbar span{
+    color: #32337e;
+}
+.topbar-separator {
+    position: relative;
+    bottom: 1px;
+}
+b, strong {
+    font-weight: 700;
+}
+.topnavbar {
+    height: 96px;
+    padding: 10px;
+    text-align: center;
+    z-index: 9999;
+}
+
+header .container{
+    background: #32337e;
+    height: 34px;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.nav-a {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 100!important;
+    color: rgba(255,255,255,.75);
+    position: relative;
+    bottom: 0px;}
+
+.pad
+{
+    background: rgba(4, 184, 48,0.7);
+}    
+
+a{
+    text-decoration: none;
+}

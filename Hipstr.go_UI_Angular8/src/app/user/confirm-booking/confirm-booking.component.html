@@ -1,0 +1,152 @@
+<div class="bg-page bg">
+  <div class="row">
+    <div class="col-md-3 ">
+
+      <div class="card styling-1" style="width:400px">
+        <div class="card-spacing">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../../assets/img/{{flight.flightCompany}}.jpg" alt="Card image" style="width:100%"></div>
+            <div class="col-md-6 text-center">
+              <h4>{{flight.source | titlecase}}</h4>
+              &nbsp;&nbsp;<img src="../../../assets/img/switch-icon.png">
+              &nbsp;&nbsp;<h4>{{flight.destination | titlecase}}</h4>
+            </div>
+          </div>
+          <br><br>
+          <div class="card-body text-center">
+            <h4>Date : {{flight.journeyDate}}</h4>
+          
+            <h4>Fare : {{flight.cost}}</h4>
+            
+            <h4>Available seats : {{flight.availableSeats}}</h4>
+
+          </div>
+          <br>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-1">
+      <span class="arrow"><i class="fa fa-arrow-right fa-4x"></i></span>
+    </div>
+    <div class="col-md-3">
+      <div class="card styling-2" style="width:400px">
+        <h2 class="text-center">Add Passenger Details </h2>
+        <br><br>
+
+
+        <form [formGroup]="userDetailForm" (ngSubmit)="addPassenger()">
+
+          <div class="form-group row">
+            <label for="name" class="col-lg-4 text-right font-weight-bold">
+              Name :
+            </label>
+
+            <div class="col-lg-8">
+              <input type="text" class="form-control " id="Name" placeholder="Name" formControlName="passengerName" />
+
+              <span class="text-danger"
+                *ngIf="(userDetailForm.controls.passengerName.touched || submitted) && userDetailForm.controls.passengerName.errors?.required">
+                Passenger Name is required
+              </span>
+              <span class="text-danger"
+                *ngIf="userDetailForm.controls.passengerName.touched && userDetailForm.controls.passengerName.errors?.pattern">
+                Enter a valid Passenger Name
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="age" class="col-lg-4 text-right font-weight-bold">
+              Age :
+            </label>
+            <div class="col-lg-8">
+              <input type="text" class="form-control " id="age" placeholder="age" formControlName="age" />
+
+              <span class="text-danger"
+                *ngIf="(userDetailForm.controls.age.touched || submitted) && userDetailForm.controls.age.errors?.required">
+                age is required
+              </span>
+              <span class="text-danger"
+                *ngIf="userDetailForm.controls.age.touched && userDetailForm.controls.age.errors?.pattern">
+                Enter a valid age
+              </span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gender" class="col-lg-4 text-right font-weight-bold">
+              Gender :
+            </label>
+            <div class="col-md-8 row">
+              <div class="col-6 row">
+
+                <input type="radio" class="form-control radio" id="male" value="male" formControlName="gender" /> <label
+                for="male" class="radio-label">Male</label>
+              </div>
+              <div class="col-6 row">
+
+                <input type="radio" id="female" class="form-control radio" value="female" formControlName="gender"> <label
+                for="female" class="radio-label">Female</label>
+              </div>
+              <span class="text-danger"
+                *ngIf="(userDetailForm.controls.gender.touched || submitted) && userDetailForm.controls.gender.errors?.required">
+                Gender is required
+              </span>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="btn btn-primary" [disabled]="!seatsAvailableFlag">Add Passenger</button>
+            <div class="text-danger" *ngIf="seatsAvailable===0">No more seats are available</div>
+          </div>
+        </form>
+
+
+      </div>
+
+    </div>
+    <div class="col-md-1">
+      <span class="arrow"><i class="fa fa-arrow-right fa-4x"></i></span>
+    </div>
+    <div class="col-md-3 card styling-3" style="width:350px">
+
+      <table class="table table-striped table-responsive table-hover table-style">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <!-- *ngFor -> Structural Directive -->
+        <tbody>
+          <tr *ngFor="let passenger of passengers; let i = index">
+
+            <td>{{passenger.passengerName}}</td>
+            <td>{{passenger.age}}</td>
+            <td>{{passenger.gender}}</td>
+            <td>
+              <button class="btn btn-outline-danger" type="button" (click)="deletePassenger(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="text-left">
+        <h4>Total Amount : {{flight.cost*count}}</h4>
+        <h4>Seats Available : {{seatsAvailable}}</h4>
+      </div>
+      <br><br>
+
+
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+  <br><br><br>
+  <div class="text-center">
+    <button class="btn btn-warning btn-style" [disabled]="bookbtn" (click)="bookTicket()">Book Ticket</button>
+  </div>
+  <br><br>
+</div>

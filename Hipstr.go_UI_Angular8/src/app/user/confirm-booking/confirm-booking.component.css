@@ -1,0 +1,85 @@
+.bg
+{
+    min-height: 30em;
+    padding-top: 2%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.styling-1
+{
+    margin-left: 2%;
+    padding: 2%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color:#fcfdfd;
+    box-shadow: 2px 2px 2px 2px rgb(138, 137, 137);
+
+}
+.styling-2
+{
+    background-color: #fcfdfd;
+    padding: 2%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 2px 2px 2px 2px rgb(138, 137, 137);
+
+}
+.styling-3
+{
+    background-color: #fcfdfd;
+    padding: 2%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 2px 2px 2px 2px rgb(138, 137, 137);
+
+}
+.image
+{
+    margin: 2%;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+    border-top-right-radius: 26px;
+    border-top-left-radius: 26px;
+}
+.radio
+{
+    width: 15px;
+    margin-top: -2%;
+}
+.arrow>i
+{
+    margin-top: 100%;
+    margin-left: 44%;
+}
+.radio-label
+{
+    padding-left: 4px;
+
+}
+.table-style
+{
+    padding-left: 4%;
+}
+.card-spacing{
+    margin-top: 2%;
+}
+
+.pad
+{
+    margin: 22%;
+}
+.bg-page
+{
+    background-color: #e1e7ee;
+}
+.btn-style
+{
+    color: white;
+    padding: 1%;
+}
